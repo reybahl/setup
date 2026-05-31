@@ -1,0 +1,97 @@
+{
+  "editor.fontSize": 13,
+  "C_Cpp.default.compilerPath": "/usr/bin/g++",
+  "editor.rulers": [
+    80,
+    120
+  ],
+  "dart.flutterSdkPath": "/Users/reyanshbahl/development/flutter",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "terminal.external.osxExec": "Ghostty.app",
+  "github.copilot.advanced": {
+    "authProvider": "github"
+  },
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cmake.showOptionsMovedNotification": false,
+  "cursor.cpp.disabledLanguages": [
+    "scminput",
+    "terraform-vars",
+    "untitled",
+    "properties"
+  ],
+  "git.autofetch": true,
+  "security.promptForLocalFileProtocolHandling": false,
+  "cursor-retrieval.canAttemptGithubLogin": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.editor.splitInGroupLayout": "vertical",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.cursorStyle": "block",
+  "editor.cursorBlinking": "solid",
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cursor.composer.shouldChimeAfterChatFinishes": true,
+  "cursor.diffs.useCharacterLevelDiffs": true,
+  "workbench.colorTheme": "GitHub Dark Default",
+  "workbench.colorCustomizations": {
+    "[GitHub Light Default]": {
+      "titleBar.activeBackground": "#501DAF",
+      "titleBar.activeForeground": "#EEEEEE",
+      "titleBar.inactiveBackground": "#e0e0e0",
+      "titleBar.inactiveForeground": "#666666",
+      "statusBar.background": "#501DAF",
+      "statusBar.foreground": "#EEEEEE",
+      "sideBar.border": "#ead1d1",
+    },
+    "[GitHub Dark Default]": {
+      // "titleBar.activeBackground": "#33009a",
+      // "titleBar.activeForeground": "#EEEEEE",
+      // "titleBar.inactiveBackground": "#001C4D",
+      // "titleBar.inactiveForeground": "#EEEEEE",
+      // "statusBar.background": "#33009a",
+      // "statusBar.foreground": "#EEEEEE",
+    },
+  },
+  "workbench.preferredLightColorTheme": "GitHub Light Default",
+  "window.autoDetectColorScheme": true,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.autopep8"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[mdx]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}

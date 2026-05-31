@@ -1,0 +1,25 @@
+# Black terminal — Cursor Dark theme (#141414 background)
+theme = Cursor Dark
+
+# Font — Menlo is shorter/denser than JetBrains Mono
+font-family = Menlo
+font-size = 13
+adjust-cell-height = -10%
+
+# macOS polish
+macos-titlebar-style = transparent
+macos-option-as-alt = true
+
+# Cursor — block shape (no-cursor stops shell integration from switching to bar at prompt)
+cursor-style = block
+shell-integration-features = no-cursor
+
+# Split panes — visible divider + clear focus indicator
+split-divider-color = #555555
+unfocused-split-opacity = 0.5
+unfocused-split-fill = #000000
+
+# Cmd+D: split right + equalize; Cmd+Shift+D: split down only
+keybind = super+d=new_split:right
+keybind = chain=equalize_splits
+keybind = super+shift+d=new_split:down
