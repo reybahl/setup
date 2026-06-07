@@ -1,11 +1,15 @@
 # Aliases
 alias lb='git branch --sort="-committerdate" --format="%(color:green)%(committerdate:relative)%(color:reset) %(refname:short)" | head -n 10'
 alias sz='source ~/.zshrc'
+alias vz='vi ~/.zshrc'
 alias p='it2profile -g'
 alias c='clear && clear'
 alias gc='git commit'
 alias gp='git push'
 alias pd='pnpm dev'
+alias gch='git checkout'
+alias gmp='git checkout main && git pull'
+alias gpu='git push --set-upstream origin $(git branch --show-current)'
 
 cda() {
 	local gitroot=$(git rev-parse --show-toplevel)
