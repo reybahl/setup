@@ -8,7 +8,12 @@ alias gc='git commit'
 alias gp='git push'
 alias pd='pnpm dev'
 alias gch='git checkout'
-alias gmp='git checkout main && git pull'
+gmp() {
+	local default
+	default=$(git symbolic-ref -q --short refs/remotes/origin/HEAD 2>/dev/null | sed 's|^origin/||')
+	[[ -z "$default" ]] && default=$(git remote show origin 2>/dev/null | awk '/HEAD branch/ {print $NF}')
+	git checkout "$default" && git pull
+}
 alias gpu='git push --set-upstream origin $(git branch --show-current)'
 
 cda() {
