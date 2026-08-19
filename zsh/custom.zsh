@@ -2,12 +2,45 @@
 alias lb='git branch --sort="-committerdate" --format="%(color:green)%(committerdate:relative)%(color:reset) %(refname:short)" | head -n 10'
 alias sz='source ~/.zshrc'
 alias vz='vi ~/.zshrc'
-alias p='it2profile -g'
 alias c='clear && clear'
 alias gc='git commit'
 alias gp='git push'
 alias pd='pnpm dev'
-alias gch='git checkout'
+gch() {
+	if [[ "$1" != "-d" ]]; then
+		git checkout "$@"
+		return
+	fi
+
+	shift
+	if (( $# != 1 )); then
+		print -u2 'usage: gch -d <branch>'
+		return 2
+	fi
+
+	local branch="$1"
+	local branch_ref="refs/heads/${branch#refs/heads/}"
+	local line worktree_path current_worktree
+
+	while IFS= read -r -d '' line; do
+		case "$line" in
+			worktree\ *) current_worktree="${line#worktree }" ;;
+			branch\ "$branch_ref") worktree_path="$current_worktree"; break ;;
+		esac
+	done < <(git worktree list --porcelain -z) || return
+
+	if [[ -n "$worktree_path" ]]; then
+		current_worktree=$(git rev-parse --show-toplevel) || return
+		if [[ "${worktree_path:A}" == "${current_worktree:A}" ]]; then
+			print -u2 "gch: refusing to remove the current worktree: $worktree_path"
+			return 1
+		fi
+
+		git worktree remove -- "$worktree_path" || return
+	fi
+
+	git checkout "$branch"
+}
 gmp() {
 	local default
 	default=$(git symbolic-ref -q --short refs/remotes/origin/HEAD 2>/dev/null | sed 's|^origin/||')
