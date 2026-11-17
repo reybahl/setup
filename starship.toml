@@ -1,6 +1,8 @@
 format = """\
   $time\
+  [](fg:#253447 bg:#365A7A)\
   $username\
+  $hostname\
   $directory\
   $git_branch\
   $line_break\
@@ -8,18 +10,29 @@ format = """\
 """
 
 [username]
-show_always = true
-style_user = "bold blue"
+show_always = false
+style_user = "bold fg:#F1F5F9 bg:#365A7A"
+style_root = "bold fg:#FECACA bg:#365A7A"
+format = '[ $user ]($style)'
+
+[hostname]
+ssh_only = true
+style = "bold fg:#F1F5F9 bg:#365A7A"
+format = '[@$hostname ]($style)'
 
 [time]
 disabled = false
-format = '[\[$time\]]($style) '
+format = '[ $time ]($style)'
 time_format = "%T"
-utc_time_offset = "-5"
-style = "green"
+utc_time_offset = "local"
+style = "fg:#DCE5EF bg:#253447"
 
 [directory]
-style = "bold green"
+style = "bold fg:#F1F5F9 bg:#365A7A"
+repo_root_style = "bold fg:#F1F5F9 bg:#365A7A"
+read_only_style = "fg:#FECACA bg:#365A7A"
+format = '[ $path($read_only) ]($style)[](fg:#365A7A)'
+repo_root_format = '[ $before_root_path$repo_root$path($read_only) ]($style)'
 
 [cmd_duration]
 style = "bold red"
@@ -37,9 +50,10 @@ disabled = true
 disabled = true
 
 [git_branch]
-symbol = ""
+symbol = " "
 truncation_symbol = ""
-style = "bold purple italic"
+style = "fg:#F0F8EC bg:#3D7546"
+format = '[](fg:#365A7A bg:#3D7546)[ $symbol$branch ]($style)[](fg:#3D7546)'
 
 [ruby]
 disabled = true
